@@ -1,0 +1,32 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins" as *;
+
+.card-star {
+  display: grid;
+  gap: 1rem;
+  &__section {
+    border-radius: 0.5rem;
+    padding: 0.75rem 0;
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    background: var(--light-grayish-magenta);
+    text-align: center;
+  }
+  @include breakpoints(medium) {
+    padding: 1rem 0;
+    &__section {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 5px;
+      text-align: left;
+      width: 370px;
+      &:nth-child(2) {
+        justify-self: center;
+      }
+      &:nth-child(3) {
+        justify-self: end;
+      }
+    }
+  }
+}

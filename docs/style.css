@@ -1,0 +1,274 @@
+/* Table of Contents
+------------------------------------------------
+
+ -- base imports
+ -- components imports
+ -- layout imports
+
+*/
+/* base imports */
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+/* Andy Bell CSS Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* components imports */
+:root {
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white-neutral: hsl(0, 0%, 100%);
+  --league-spartan: "League Spartan", sans-serif;
+}
+
+.tagline {
+  color: var(--very-dark-magenta);
+  text-align: center;
+}
+.tagline h1 {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+}
+.tagline h2 {
+  font-size: 1rem;
+  margin: 2rem 0;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .tagline {
+    text-align: left;
+  }
+  .tagline h1 {
+    width: 14ch;
+  }
+  .tagline h2 {
+    width: 45ch;
+  }
+}
+
+.card-star {
+  display: grid;
+  gap: 1rem;
+}
+.card-star__section {
+  border-radius: 0.5rem;
+  padding: 0.75rem 0;
+  color: var(--very-dark-magenta);
+  font-weight: 700;
+  background: var(--light-grayish-magenta);
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .card-star {
+    padding: 1rem 0;
+  }
+  .card-star__section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5px;
+    text-align: left;
+    width: 370px;
+  }
+  .card-star__section:nth-child(2) {
+    justify-self: center;
+  }
+  .card-star__section:nth-child(3) {
+    justify-self: end;
+  }
+}
+
+.card-testimonial {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+.card-testimonial__section {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--very-dark-magenta);
+  color: var(--white-neutral);
+  font-size: 0.75rem;
+}
+.card-testimonial__profile {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.card-testimonial__profile img {
+  height: 35px;
+  border-radius: 50%;
+}
+.card-testimonial__profile p:nth-child(1) {
+  font-weight: 700;
+}
+.card-testimonial__profile p:nth-child(2) {
+  color: var(--soft-pink);
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .card-testimonial {
+    flex-direction: row;
+  }
+  .card-testimonial__section:nth-child(1) {
+    align-self: flex-start;
+  }
+  .card-testimonial__section:nth-child(2) {
+    align-self: center;
+  }
+  .card-testimonial__section:nth-child(3) {
+    align-self: flex-end;
+  }
+}
+
+.background-texture {
+  /* svg:nth-child(-n + 2) {} */
+  /* svg:nth-child(n + 3):nth-child(-n + 4) {} */
+}
+.background-texture__desktop {
+  display: none;
+  position: absolute;
+  z-index: -1;
+}
+.background-texture__desktop--top {
+  top: 0;
+  left: 0;
+  width: 584px;
+  height: 362px;
+}
+.background-texture__desktop--bottom {
+  bottom: -15%;
+  right: 0;
+  width: 1085px;
+  height: 673px;
+}
+.background-texture__mobile {
+  position: absolute;
+  z-index: -1;
+}
+.background-texture__mobile--top {
+  top: 0;
+  left: 0;
+  width: 374px;
+  height: 232px;
+}
+.background-texture__mobile--bottom {
+  bottom: -40%;
+  right: 0;
+  width: 375px;
+  height: 503px;
+}
+@media (min-width: 768px) {
+  .background-texture__desktop {
+    display: block;
+  }
+  .background-texture__mobile {
+    display: none;
+    background: none;
+  }
+}
+
+/* layout imports */
+body {
+  font-family: var(--league-spartan);
+  background: var(--white-neutral);
+  padding: 4rem 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+@media (min-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+}
+
+main {
+  display: grid;
+  width: 310px;
+  gap: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 1000px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 220px;
+  }
+  .card-testimonial {
+    grid-column: span 2;
+  }
+}/*# sourceMappingURL=style.css.map */

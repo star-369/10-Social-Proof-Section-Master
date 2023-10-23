@@ -1,0 +1,24 @@
+@use "./variables" as *;
+
+@mixin grid-center {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+@mixin breakpoints($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+@mixin top {
+  top: 0;
+}
+@mixin right {
+  right: 0;
+}
+@mixin bottom {
+  bottom: 0;
+}
+@mixin left {
+  left: 0;
+}

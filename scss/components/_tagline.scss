@@ -1,0 +1,26 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins" as *;
+
+.tagline {
+  color: var(--very-dark-magenta);
+  text-align: center;
+  h1 {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 1rem;
+    margin: 2rem 0;
+    font-weight: 400;
+  }
+  @include breakpoints(medium) {
+    text-align: left;
+    h1 {
+      width: 14ch;
+    }
+    h2 {
+      width: 45ch;
+    }
+  }
+}

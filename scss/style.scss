@@ -1,0 +1,20 @@
+/* Table of Contents
+------------------------------------------------
+
+ -- base imports
+ -- components imports
+ -- layout imports
+
+*/
+
+/* base imports */
+@use "base/reset";
+
+/* components imports */
+@use "components/tagline";
+@use "components/card-star";
+@use "components/card-testimonial";
+@use "components/background-texture";
+
+/* layout imports */
+@use "layout/main";

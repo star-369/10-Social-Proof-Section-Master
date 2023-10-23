@@ -1,0 +1,26 @@
+@use "../abstracts/mixins" as *;
+
+body {
+  font-family: var(--league-spartan);
+  background: var(--white-neutral);
+  padding: 4rem 0;
+  @include grid-center;
+  @include breakpoints(medium) {
+    overflow: hidden;
+  }
+}
+main {
+  display: grid;
+  width: 310px;
+  gap: 2rem 1rem;
+}
+@include breakpoints(medium) {
+  main {
+    width: 1000px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 220px;
+  }
+  .card-testimonial {
+    grid-column: span 2;
+  }
+}

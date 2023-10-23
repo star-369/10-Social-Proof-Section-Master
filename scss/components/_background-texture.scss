@@ -1,0 +1,51 @@
+@use "../abstracts/mixins" as *;
+
+.background-texture {
+  /* svg:nth-child(-n + 2) {} */
+  &__desktop {
+    display: none;
+    position: absolute;
+    z-index: -1;
+
+    &--top {
+      top: 0;
+      left: 0;
+      width: 584px;
+      height: 362px;
+    }
+    &--bottom {
+      bottom: -15%;
+      right: 0;
+      width: 1085px;
+      height: 673px;
+    }
+  }
+  /* svg:nth-child(n + 3):nth-child(-n + 4) {} */
+  &__mobile {
+    // background: red;
+    position: absolute;
+    z-index: -1;
+    &--top {
+      top: 0;
+      left: 0;
+      width: 374px;
+      height: 232px;
+    }
+    &--bottom {
+      bottom: -40%;
+      right: 0;
+      width: 375px;
+      height: 503px;
+    }
+  }
+  @include breakpoints(medium) {
+    &__desktop {
+      display: block;
+      // background: red;
+    }
+    &__mobile {
+      display: none;
+      background: none;
+    }
+  }
+}
